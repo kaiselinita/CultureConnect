@@ -1,0 +1,17 @@
+
+.DS_Store
+
+
+.vscode/
+.idea/
+
+
+*.log
+*.tmp
+
+
+node_modules/
+.env
+.DS_Store
+node_modules/
+vendor/

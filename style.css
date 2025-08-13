@@ -1,0 +1,1531 @@
+/*
+Theme Name:   Culture Connect
+Theme URI:    https://example.com/culture-connect
+Author:       Katya
+Author URI:   https://example.com
+Description:  Тема для мини-сайта Culture Connect на WordPress
+Version:      1.0
+License:      GNU General Public License v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  cultureconnect
+Tags:         custom-theme, one-column, responsive
+*/
+
+/* -------------------- БАЗОВЫЕ СТИЛИ -------------------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #F9F9F9;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------- ОБЁРТКА КОНТЕНТА -------------------- */
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  background-color: #fff;
+}
+
+/* -------------------- ШАПКА -------------------- */
+.site-header {
+  position: relative;
+  background-color: #FE7059;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.logo img {
+  height: 60px;
+}
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.main-menu a {
+  color: #fff;
+  font-weight: 700;
+  transition: opacity 0.3s;
+}
+.main-menu a:hover {
+  opacity: 0.8;
+}
+
+/* -------------------- КНОПКИ -------------------- */
+.btn-primary,
+.back-button {
+  display: inline-block;
+  background-color: #FE7059;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover,
+.back-button:hover {
+  background-color: #e05545;
+}
+
+/* -------------------- HOME PAGE -------------------- */
+
+.home-page .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+.hero-text p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 4rem 0;
+}
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+.about-text p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.about-img img {
+  max-width: 400px;
+  border-radius: 8px;
+}
+.explore-cultures h2,
+.from-blog-home h2 {
+  text-align: center;
+  font-size: 32px;
+  margin: 2rem 0;
+}
+.cards-grid,
+.events-grid,
+.posts-grid,
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.from-blog-home .blog-card {
+  background-color: #EDF7F1;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.from-blog-home .blog-card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.from-blog-home .blog-card h3 {
+  font-size: 18px;
+  margin: 0.75rem 0 0.25rem;
+}
+.from-blog-home .blog-card .post-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.from-blog-home .blog-card .post-link {
+  color: #FE7059;
+  font-size: 14px;
+  word-break: break-all;
+}
+#from-blog-more,
+.blog-more {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+/* -------------------- EVENTS PAGE -------------------- */
+.events-page .events-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.banner-text h1 {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+.banner-text p {
+  font-size: 18px;
+  font-weight: 500;
+  max-width: 600px;
+}
+.banner-image img {
+  width: 400px;
+  border-radius: 8px;
+}
+.event-card {
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+}
+.event-card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.event-card h3 {
+  font-size: 20px;
+  margin: 0.75rem 0 0.25rem;
+}
+.event-card p {
+  font-size: 14px;
+  color: #555;
+}
+.learn-more {
+  color: #FE7059;
+  font-weight: 600;
+  font-size: 14px;
+}
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- COUNTRY PAGE -------------------- */
+.country-page .country-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.country-hero .hero-text {
+  flex: 1 1 400px;
+}
+.country-hero .hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 1rem;
+}
+.country-hero .hero-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.country-hero .hero-image {
+  flex: 1 1 300px;
+  text-align: right;
+}
+.country-hero .hero-image img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.info-card {
+  background-color: #EDF7F1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 calc(50% - 1.5rem);
+  box-sizing: border-box;
+}
+.info-card h3 {
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+.info-card p,
+.info-card ul {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.info-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+.travel-tips {
+  background-color: #EDF7F1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+.travel-tips h2 {
+  font-size: 20px;
+  margin-bottom: 0.75rem;
+}
+.travel-tips p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* -------------------- SKYLINE BANNER -------------------- */
+.skyline-banner {
+  text-align: center;
+  margin: 3rem 0;
+}
+.skyline-banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------- БЛОГ-СТРАНИЦА -------------------- */
+.blog-page .blog-intro h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.blog-page .posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.blog-page .blog-card {
+  background-color: #EDF7F1;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.blog-page .blog-card img {
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.blog-page .blog-card h3 {
+  font-size: 18px;
+  margin: 0.75rem 0 0.25rem;
+}
+.blog-page .blog-card .post-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.blog-page .blog-card a {
+  color: #FE7059;
+}
+
+/* -------------------- ФУТЕР -------------------- */
+.site-footer {
+  background-color: #FE7059;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 14px;
+}
+.site-footer .footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.site-footer a:hover {
+  opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+  .hero,
+  .about-us,
+  .events-banner,
+  .country-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img,
+  .about-img,
+  .banner-image,
+  .country-hero .hero-image {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .info-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* 1. Hero */
+.intro-section {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.text-col {
+  flex: 1 1 300px;
+  max-width: 45%;
+}
+.text-col h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.text-col .description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.back-button {
+  background-color: #FE7059;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+
+/* 2. 2×2 info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.info-box {
+  background-color: #EDF7F1;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.info-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.info-box p,
+.info-box ul {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+.info-box ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+.info-box ul li {
+  margin-bottom: 1rem;
+}
+
+/* 3. Travel Tips block */
+.travel-tips {
+  background-color: #EDF7F1;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+.travel-tips h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.travel-tips p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .text-col,
+  .image-col {
+    max-width: 100%;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================================================
+   ABOUT US PAGE
+   ========================================================================= */
+
+/* Общая обёртка */
+.about-page {
+  padding: 3rem 1rem;
+  background-color: #FFFFFF;
+}
+
+/* Hero About Us */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.about-hero__text {
+  flex: 1 1 45%;
+}
+.about-hero__text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.about-hero__text p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #444;
+}
+.about-hero__text .btn-primary {
+  font-size: 16px;
+}
+.about-hero__image {
+  flex: 1 1 45%;
+  text-align: right;
+}
+.about-hero__image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Values Banner */
+.values-banner {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.values-banner img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-hero__image {
+    margin-bottom: 2rem;
+  }
+  .about-hero__text,
+  .about-hero__image {
+    flex: 1 1 100%;
+  }
+  .values-banner img {
+    max-width: 100%;
+  }
+}
+/* ————————————————————————————
+   1. Сбрасываем фон и отступы у контейнера
+   ———————————————————————————— */
+   .stay-connected {
+    background: none !important;
+    padding: 0 !important;
+    margin: 1rem 0 !important; /* можно скорректировать, чтобы поднять/опустить */
+    text-align: center;        /* центрируем форму и текст */
+  }
+  
+  /* ————————————————————————————
+     2. Заголовок и подзаголовок
+     ———————————————————————————— */
+  .stay-connected h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .stay-connected p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  
+  /* ————————————————————————————
+     3. Центрируем сам <form> как inline-блок
+     ———————————————————————————— */
+  .stay-connected form {
+    display: inline-flex; /* выстраиваем инпут + кнопку в ряд */
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* ————————————————————————————
+     4. Стили для поля email
+     ———————————————————————————— */
+  .stay-connected input[type="email"] {
+    padding: 0.8rem 1.5rem;
+    width: 300px;
+    max-width: 100%;
+    border: 2px solid #FE7059;
+    border-radius: 999px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  .stay-connected input[type="email"]:focus {
+    border-color: #FE7059;
+  }
+  
+  /* ————————————————————————————
+     5. Стили для кнопки «Sign Up»
+     ———————————————————————————— */
+  .stay-connected button {
+    padding: 0.8rem 2rem;
+    background-color: #FE7059;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .stay-connected button:hover {
+    background-color: #e05545;
+  }
+  /* ── Fully show card images (no more cropping) ── */
+
+/* Events & Explore Cultures cards */
+.events-page .event-card img,
+.cards-grid .event-card img,
+.events-grid .event-card img {
+  width: 100%;        /* fill the card’s width */
+  height: auto !important;    /* let height grow to preserve aspect ratio */
+  object-fit: none !important;/* turn off cropping */
+}
+
+/* Blog cards */
+.blog-page .blog-card img,
+.from-blog-home .blog-card img,
+.blog-cards .blog-card img {
+  width: 100%;
+  height: auto !important;
+  object-fit: none !important;
+}
+/* ── Show the *whole* image, not zoomed/cropped ── */
+
+.events-page .event-card img,
+.cards-grid .event-card img,
+.events-grid .event-card img {
+  width: 100%;
+  height: 200px;              /* fix a box height */
+  object-fit: contain !important; /* letterbox/fit the whole image */
+  background-color: #fff;     /* so you don’t see “empty” areas blending into card */
+}
+
+/* If you also want this on the blog cards: */
+.blog-page .blog-card img,
+.from-blog-home .blog-card img,
+.blog-cards .blog-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain !important;
+  background-color: #fff;
+}
+/* ── Force all card & hero images to fully display, no cropping ── */
+
+.hero-img img,
+.from-blog-home .blog-card img,
+.blog-page .blog-card img,
+.blog-cards .blog-card img {
+  /* 1) unify container height */
+  height: 200px;             /* adjust as needed: 200px for blogs, 250px for hero? */
+  max-height: 200px;         /* same as height */
+  width: 100%;               /* full width of its parent */
+  
+  /* 2) show entire image */
+  object-fit: contain !important;
+  
+  /* 3) letterbox bg so any empty space is white */
+  background-color: #fff;
+  
+  /* 4) maintain rounded corners */
+  border-radius: 8px;
+}
+
+
+/* ── Show full image in blog cards (no more cropping) ── */
+.from-blog-home .blog-card img,
+.blog-page .posts-grid .blog-card img {
+  width: 100%;              /* span full card width */
+  height: auto !important;  /* let it scale naturally */
+  max-height: 200px;        /* optional: cap the height */
+  
+  object-fit: contain !important;     /* show the whole image */
+  background-color: #fff;            /* white “letterbox” bars */
+  border-radius: 8px;                /* preserve your rounded corners */
+}
+/* ── Alternate blog-card BG two-by-two ── */
+.blog-cards .blog-card {
+  /* remove any inline background-color you may have */
+  background-color: transparent !important;
+}
+
+/* Only override the blog‐block images on the home page */
+.home-page .from-blog-home .blog-card img {
+  width: 100%         !important;
+  height: auto        !important;
+  object-fit: none    !important;
+  object-position: center !important;
+}
+/* 1) Two cards per row in “From the Blog” on Home */
+.home-page .from-blog-home .blog-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem !important;
+}
+/* ─────────────────────────────────────────────────────────
+   Override for “From the Blog” on the Home page only
+   ───────────────────────────────────────────────────────── */
+  
+  .home-page .from-blog-home .blog-card img {
+    width: 100%          !important; /* span full column width */
+    height: auto         !important; /* natural height, no cropping */
+    object-fit: contain  !important; /* letterbox rather than crop */
+    background-color: #fff !important; /* white bars if aspect ratios differ */
+    border-radius: 8px    !important; /* preserve your rounding */
+  }
+  /* 1) Make the page background mint-green like the mockup */
+body {
+  background-color: #EDF7F1;
+}
+
+.site-wrapper {
+  max-width: 1200px;     /* ↑ bump this up to shrink the mint margins */
+  width: 90%;            /* or use a percentage so it flexes on narrow screens */
+  padding: 2rem 1.5rem;
+}
+
+/* 3) Keep the header itself full‐width, but center its inner nav/logo */
+.site-header {
+  width: 100%;
+  background-color: #FE7059; /* your coral */
+}
+.site-header .site-wrapper {
+  /* undo the white & padding here so the header sits flush */
+  background: none;
+  padding: 0;
+  margin: 0 auto;
+}
+/* ==========================================================================
+   CONDITIONS GÉNÉRALES PAGE
+   ========================================================================== */
+   .conditions-page {
+    /* no extra bg, uses .site-wrapper’s white background with mint gutters */
+    padding-bottom: 4rem;
+  }
+  
+  /* 1. Intro block */
+  .conditions-page .conditions-intro {
+    padding: 3rem 0;
+  }
+  .conditions-page .conditions-intro h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  .conditions-page .conditions-intro ol {
+    list-style: decimal inside;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-left: 0;
+  }
+  .conditions-page .conditions-intro ol li {
+    margin-bottom: 1.5rem;
+  }
+  .conditions-page .conditions-intro ol li strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+  }
+  .conditions-page .conditions-intro ol li p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* 2. Skyline banner */
+  .conditions-page .skyline-banner {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .conditions-page .skyline-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* 3. Stay connected form (re-use your existing) */
+  .conditions-page .stay-connected {
+    background: none !important;
+    padding: 0 !important;
+    margin: 2rem 0 0 0 !important;
+    text-align: center;
+  }
+  .conditions-page .stay-connected h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .conditions-page .stay-connected form {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .conditions-page .stay-connected input[type="email"] {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #FE7059;
+    border-radius: 999px;
+    width: 280px;
+    max-width: 100%;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .conditions-page .stay-connected input:focus {
+    border-color: #e05545;
+  }
+  .conditions-page .stay-connected button {
+    padding: 0.75rem 2rem;
+    background-color: #FE7059;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .conditions-page .stay-connected button:hover {
+    background-color: #e05545;
+  }
+  
+  /* 4. Success/Error messages */
+  .conditions-page .success-msg,
+  .conditions-page .error-msg {
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  .conditions-page .success-msg { color: green; }
+  .conditions-page .error-msg   { color: red; }
+  
+  /* ==========================================================================
+     END CONDITIONS GÉNÉRALES
+     ========================================================================== */
+  
+/* === FAQ Page Styles ================================================== */
+
+/* Общий отступ и фон для страницы FAQ */
+.faq-page__content {
+  padding: 3rem 1rem;
+  background-color: #FFFFFF;
+}
+
+/* Центрируем заголовок */
+.faq-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+/* ==========================================================================
+   FAQ: стиль аккордеона
+   ========================================================================== */
+
+/* 1) Фоновые шевроны по краям */
+.faq-page__content {
+  position: relative;
+  padding: 4rem 1rem 2rem;
+  background: #fff;
+}
+.faq-page__content::before,
+.faq-page__content::after {
+  content: "";
+  position: absolute;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle at center, rgba(254,112,89,0.15), transparent);
+  border-radius: 50%;
+  z-index: -1;
+}
+.faq-page__content::before {
+  top: -40px; left: -40px;
+}
+.faq-page__content::after {
+  bottom: -40px; right: -40px;
+}
+
+/* 2) Заголовок */
+.faq-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* 3) Аккордеон */
+.faq-accordion details {
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background-color 0.3s;
+  
+  /* чередуем фон: нечётный светло-зелёный, чётный — светло-сиреневый */
+  background-color: #E4F5E9;
+}
+.faq-accordion details:nth-child(even) {
+  background-color: #F0E7F6;
+}
+
+/* 4) Плавное открытие ответа */
+.faq-accordion details p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 1rem;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.faq-accordion details[open] p {
+  max-height: 500px; /* достаточно большое, чтобы влез весь текст */
+  padding: 0.75rem 1rem 1rem;
+}
+
+/* 5) Заголовок-summary */
+.faq-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 600;
+  position: relative;
+}
+
+/* 6) Иконка слева */
+.faq-accordion summary::before {
+  content: "";
+  display: inline-block;
+  width: 20px; height: 20px;
+  margin-right: 0.75rem;
+  background: url('http://localhost:8888/wp-content/uploads/2025/08/question-mark.png') no-repeat center/contain;
+}
+
+/* 7) Стрелка справа */
+.faq-accordion summary::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.3s;
+  color: #FE7059;
+}
+.faq-accordion details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* 8) Hover и активный фон */
+.faq-accordion summary:hover {
+  background-color: rgba(254,112,89,0.05);
+}
+.faq-banner {
+  text-align: center;
+  margin: 2rem 0;
+}
+.faq-banner img {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+.faq-banner--top img {
+  width: 300px;    /* как на первом примере */
+  height: 300px;
+}
+.faq-banner--bottom img {
+  width: 700px;    /* как на втором примере */
+  height: 450px;
+  max-width: 100%; /* на мобильных адаптируется */
+}
+
+
+/* сам блок с картинкой: центрируем и даём вертикальные отступы */
+.conditions-bottom-img {
+  text-align: center;
+  margin: 2rem auto;    /* отступ сверху/снизу, центрируем горизонтально */
+}
+
+/* картинка: тянем на всю доступную ширину, но не больше максимального размера */
+.conditions-bottom-img img {
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;     /* подберите этот размер под ваш пример (например 400–600px) */
+  height: auto;
+}
+/* -------------------- ABOUT PAGE WRAPPER -------------------- */
+.about-page {
+  padding: 3rem 1.5rem;            /* отступы от белых краёв */
+  background-color: #fff;
+}
+
+/* общий заголовок секций */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* -------------------- VALUES IMAGE -------------------- */
+.values-section {
+  margin: 0 auto 4rem;
+  max-width: 600px;
+  text-align: center;
+}
+.values-image img {
+  width: 700px;       /* уменьшенный размер, как на макете */
+  max-width: 300%;
+  border-radius: 8px;
+}
+.values-section .values-image {
+  display: flex;
+  justify-content: center; /* центрирует по горизонтали */
+}
+
+/* -------------------- USER SUGGESTION FORM -------------------- */
+.suggestion-form {
+  background: #ffffff;
+  padding: 2.5rem 1rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto 4rem;
+}
+.suggestion-form .field-group {
+  margin-bottom: 1rem;
+}
+.suggestion-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.suggestion-form input[type="text"],
+.suggestion-form input[type="url"],
+.suggestion-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #FE7059;
+  border-radius: 999px;
+  font-size: 15px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.suggestion-form textarea {
+  border-radius: 12px;
+}
+.suggestion-form button {
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
+/* чтобы внутренний .site-wrapper не давал лишних отступов в шапке */
+.site-header .site-wrapper {
+  background: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* 1) Сделать иллюстрацию справа поменьше */
+.about-hero__image img {
+  max-width: 400px;    /* или 250px — подберите нужный размер */
+  width: 100%;
+  height: auto;
+}
+
+/* 2) Добавить отступ слева у колонки с текстом и кнопкой */
+.about-hero__text {
+  padding-left: 2rem;    /* подтягивает текст от белого фона слева */
+  max-width: 45%;        /* ограничивает ширину, чтобы не растягивалось слишком */
+  box-sizing: border-box;
+}
+
+/* 3) Если нужно сместить колонку вправо чуть сильнее, можно добавить margin */
+.about-hero__text {
+  margin-right: auto;    /* сбросит автоматический отступ */
+  margin-left: 7rem;     /* дополнительный отступ от левого краешка .site-wrapper */
+}
+
+/* 4) Коррекция поведения на мобильных */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-hero__text,
+  .about-hero__image {
+    padding: 0 1rem;      /* горизонтальные отступы на мобилке */
+    max-width: 100%;
+  }
+  .about-hero__image img {
+    max-width: 80%;       /* чуть уже, чем 100% контейнера */
+    margin: 0 auto;
+  }
+}
+/* EVENTS PAGE: подогнать Hero-блок аналогично About Us */
+
+/* 1) Ограничиваем ширину изображения и делаем его поменьше */
+.events-banner .banner-image img {
+  max-width: 400px;    /* подберите нужное число: 250–350 */
+  width: 100%;
+  height: auto;
+}
+
+/* 2) Добавляем отступ слева у колонки с текстом, чтобы текст не прилипал к краю */
+.events-banner .banner-text {
+  padding-left: 7rem;  /* отступ от левого края .site-wrapper */
+  box-sizing: border-box;
+  max-width: 45%;      /* занимает около половины всей ширины */
+}
+
+
+/* 4) Медиазапрос для мобильных */
+@media (max-width: 768px) {
+  .events-banner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .events-banner .banner-text,
+  .events-banner .banner-image {
+    padding: 0 1rem;   /* небольшие горизонтальные отступы */
+    max-width: 100%;
+  }
+  .events-banner .banner-image img {
+    max-width: 80%;    /* чуть уже на мобильниках */
+    margin: 0 auto;
+  }
+}
+/* Отступ вокруг картинки в Hero-блоке Events */
+.events-banner .banner-image {
+  padding-right: 7rem;    /* отступ справа от картинки до края контейнера */
+  box-sizing: border-box; /* чтобы padding учитывался внутри ширины */
+}
+
+/* Адаптивно под мобильные */
+@media (max-width: 768px) {
+  .events-banner .banner-image {
+    padding: 1rem;        /* равные отступы вокруг */
+  }
+}
+/* 3) Секция Have an Idea? («поднять» и разделитель) */
+.suggestion-form {
+  position: relative;
+  margin-top: -1.5rem;      /* поднимаем чуть вверх */
+  padding-top: 0;           /* сбрасываем лишний */
+  margin-bottom: 3rem;
+}
+
+/* разделитель между формой идей и подпиской */
+.suggestion-form .idea-divider {
+  text-align: center;
+  margin: 7rem auto 2rem;    /* отступ сверху/снизу */
+  max-width: 500px;         /* ширина divider-изображения */
+}
+.suggestion-form .idea-divider img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+/* 1) Отступы для Hero-блока */
+.home-page .hero {
+  /* просто чуть сузим содержимое (справа и слева) */
+  padding: 0 7rem; 
+  box-sizing: border-box;
+}
+
+/* 2) Чтобы не перекосить текст вправо, 
+      добавим «мягкий» отступ именно слева у текстовой колонки */
+.home-page .hero .hero-text {
+  padding-left: 1rem; /* регулируйте на своё усмотрение */
+}
+
+/* 3) И симметрично добавим отступ справа у картинки */
+.home-page .hero .hero-img {
+  padding-right: 1rem;
+}
+
+/* 4) Повторяем то же для второго блока на главной (например, About-Us) */
+.home-page .about-us {
+  padding: 0 7rem;
+  box-sizing: border-box;
+}
+.home-page .about-us .about-text {
+  padding-left: 1rem;
+}
+.home-page .about-us .about-img {
+  padding-right: 1rem;
+}
+/* 1) Уменьшаем размер главного заголовка на Homepage */
+.home-page .hero-text h1,
+.home-page .intro-section .text-col h1 {
+  font-size: 36px; /* вместо 48px или 50px, подберите своё значение */
+} 
+/* Делает секцию .hero флекс-контейнером */
+.home-page .hero {
+  display: flex;
+  align-items: center;        /* выравнивание по центру по вертикали */
+  justify-content: space-between; /* пространство между колонками */
+}
+
+/* Текст занимает, например, 40% */
+.home-page .hero-text {
+  flex: 0 0 40%;
+}
+
+/* Изображение — 60% */
+.home-page .banner1-img {
+  flex: 0 0 40%;
+}
+
+/* Само img подстраивается под контейнер */
+.home-page .banner1-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Двухколоночная сетка для карточек на странице Blog === */
+section.posts-grid {
+  display: grid;
+  /* 2 равных колонки */
+  grid-template-columns: repeat(2, 1fr);
+  /* отступы между карточками */
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+/* Адаптив: на экранах уже 768px — одна колонка */
+@media (max-width: 768px) {
+  section.posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Обтекание длинных ссылок внутри карточки === */
+section.posts-grid .blog-card .post-link {
+  display: block;          /* чтобы можно было переносить строку */
+  overflow-wrap: anywhere; /* разбивает слово/URL при необходимости */
+  word-break: break-word;  /* запасной вариант */
+}
+
+/* == Секция и сетка == */
+.new-blog-section {
+  padding: 2rem 1rem;
+  background-color: #f9fdfb;
+}
+
+.new-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Адаптив: одна колонка на экранах уже 768px */
+@media (max-width: 768px) {
+  .new-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* == Стили карточки == */
+.new-blog-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Изображение */
+.new-card-image {
+  width: 100%;
+  /* подберите высоту, например 180px или используйте aspect-ratio */
+  height: 180px;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+.new-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Заголовок */
+.new-card-title {
+  font-size: 1.125rem;
+  margin: 1rem;
+  line-height: 1.3;
+}
+
+/* Дата */
+.new-card-date {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0 1rem 0.75rem;
+}
+
+/* Ссылка */
+.new-card-link {
+  margin: 0 1rem 1rem;
+  font-size: 0.875rem;
+  color: #fe7059;
+  text-decoration: none;
+  display: block;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.new-card-link:hover {
+  text-decoration: underline;
+}
+/* === Секция с отступами вокруг «белого» фона === */
+.new-blog-section {
+  background-color: #ffffff;
+  /* padding сверху/снизу 4rem, слева/справа 2rem */
+  padding: 4rem 4rem;
+  /* центрируем секцию и ограничиваем максимальную ширину */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Заголовок над карточками === */
+.new-blog-header {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 2rem;    /* от заголовка до грид�а 2rem */
+  color: #333333;
+}
+
+/* === Грид карточек === */
+.new-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  /* чтобы карточки не прилипали к краю контейнера */
+  padding: 0 1rem;
+}
+
+/* адаптив: одна колонка до 768px */
+@media (max-width: 768px) {
+  .new-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Остальные стили карточек без изменений === */
+/* .new-blog-card, .new-card-image, .new-card-link и т.д. */
+
+.new-blog-section .new-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+
+  /* вот эти две строки — добавляют отступы слева и справа */
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+/* Отступы слева/справа у сетки Explore Cultures */
+.explore-cultures .cards-grid {
+  /* уже существующие ваши свойства grid… */
+  padding: 0 5rem;   /* 0 сверху/снизу, 2rem слева/справа */
+}
+.country-page section {
+  padding: 0 8rem;
+  box-sizing: border-box;
+}
+/* Сразу после .site-wrapper.country-page { … } */
+/* ---------------------------------------------- */
+/* 1. Ограничиваем ширину и центрируем секцию */
+.site-wrapper.country-page .travel-tips {
+  max-width: 1200px;       /* такая же макс-ширина, как у других секций */
+  margin: 0 auto 1rem;     /* по центру, снизу отступ между секциями */
+  
+  /* 2. Горизонтальные внутренние отступы */
+  padding: 2rem;           /* 2rem сверху/снизу/слева/справа */
+  box-sizing: border-box;  /* чтобы padding учитывался внутри max-width */
+  
+  background-color: #ffffff; /* если нужно сохранить мятный фон */
+  border-radius: 12px;        /* скруглить углы, как другие блоки */
+}
+
+/* 3. Стили заголовка и контента внутри */
+.site-wrapper.country-page .travel-tips h2 {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  text-align: center;       /* или center, как вам удобнее */
+}
+
+.site-wrapper.country-page .travel-tips p {
+  margin: 0;
+  line-height: 3;
+  text-align: center;
+}
+
+/* === Morocco: hero layout (text left, image right) === */
+.country-page .intro-section {
+display: flex;
+align-items: center;
+gap: 2rem;
+padding: 0 2rem;          /* отступы от белого фона */
+box-sizing: border-box;
+}
+
+.country-page .intro-section .text-col  { 
+flex: 1 1 48%;
+min-width: 280px;
+}
+
+.country-page .intro-section .image-col { 
+flex: 1 1 52%;
+min-width: 280px;
+display: flex;
+justify-content: flex-end;
+}
+
+.country-page .intro-section .image-col img {
+width: 100%;
+max-width: 720px;         /* можно увеличить/уменьшить */
+height: auto;             /* адаптив без искажений */
+display: block;
+border-radius: 14px;
+object-fit: cover;        /* если задашь высоту/ratio, аккуратно обрежет */
+object-position: center;
+}
+
+/* Мобилки: складываем в колонку */
+@media (max-width: 900px) {
+.country-page .intro-section {
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.country-page .intro-section .image-col {
+  justify-content: center;
+}
+.country-page .intro-section .image-col img {
+  max-width: none;
+  width: 100%;
+}
+}
+/* ——— Фиалковая тема для страниц с классом .country-violet ——— */
+.country-violet .info-box {
+  background: #E4DDF0;      /* базовый лиловый */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.country-violet .info-box:nth-child(even) {
+  background: #E8DDF8;      /* чуть глубже для чётных карточек */
+}
+
+.country-violet .info-box h3 {
+  color: #5C3D8F;           /* заголовки под палитру */
+}
+
+.country-violet .info-box p,
+.country-violet .info-box li {
+  color: #2E2E2E;           /* читаемый текст */
+}
+
+/* опционально: сделать и блок Travel Tips в общей гамме */
+.country-violet .travel-tips {
+  background: #F7F2FF;
+  border-radius: 12px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.country-violet .travel-tips h2 { color: #5C3D8F; }
+
+/* если где-то глобально прописан «мятный» фон для .info-box и он не даёт перекрасить,
+   добавьте !important (только если реально нужно): */
+/* .country-violet .info-box { background:#F0E7F6 !important; } */
+
+/* ——— Белая тема для карточек на страницах с .country-white ——— */
+.country-page.country-white .info-box {
+  background: #ffffff;
+  border-radius: 12px;
+  /* тонкая граница, чтобы карточки не «слипались» на белом */
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* чётные — тоже белые (на случай чередующихся фонов где-то ещё) */
+.country-page.country-white .info-box:nth-child(even) {
+  background: #ffffff;
+}
+
+/* читаемые цвета текста/заголовков */
+.country-page.country-white .info-box h3 { color: #222; }
+.country-page.country-white .info-box p,
+.country-page.country-white .info-box li { color: #333; }
+
+/* если хочешь, чтобы и Travel Tips был белым */
+.country-page.country-white .travel-tips {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
